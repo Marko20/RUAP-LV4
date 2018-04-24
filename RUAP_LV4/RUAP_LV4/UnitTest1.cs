@@ -44,18 +44,18 @@ namespace SeleniumTests
         {
 
             Random rnd = new Random();
-            int x = rnd.Next(0, 10);
+            var x = (rnd.Next(0, 10));
 
             driver.Navigate().GoToUrl("https://demo.opencart.com/");
             driver.FindElement(By.LinkText("My Account")).Click();
             driver.FindElement(By.LinkText("Register")).Click();
             driver.FindElement(By.Id("input-firstname")).Click();
             driver.FindElement(By.Id("input-firstname")).Clear();
-            driver.FindElement(By.Id("input-firstname")).SendKeys("ime");
+            driver.FindElement(By.Id("input-firstname")).SendKeys("ime" + x);
             driver.FindElement(By.Id("input-lastname")).Clear();
-            driver.FindElement(By.Id("input-lastname")).SendKeys("prezime");
+            driver.FindElement(By.Id("input-lastname")).SendKeys("prezime" + x);
             driver.FindElement(By.Id("input-email")).Clear();
-            driver.FindElement(By.Id("input-email")).SendKeys("mail@gmail.com");
+            driver.FindElement(By.Id("input-email")).SendKeys("mail" + x + "@gmail.com");
             driver.FindElement(By.Id("input-telephone")).Clear();
             driver.FindElement(By.Id("input-telephone")).SendKeys("56456132531");
             driver.FindElement(By.Id("input-password")).Click();
